@@ -15,7 +15,6 @@ public class VideoCard extends Property {
         this.graphicsCardRamSize = graphicsCardRamSize;
     }
 
-    @Override
     public String getDescription() {
         return "";
     }

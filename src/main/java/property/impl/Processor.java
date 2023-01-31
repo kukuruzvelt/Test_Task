@@ -15,7 +15,6 @@ public class Processor extends Property {
         this.processorCount = processorCount;
     }
 
-    @Override
     public String getDescription() {
         return "";
     }
