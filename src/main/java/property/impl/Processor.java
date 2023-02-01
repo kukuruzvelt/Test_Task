@@ -1,21 +1,23 @@
 package property.impl;
 
-import property.Property;
+import property.Detail;
 
 import java.math.BigDecimal;
 
-public class Processor extends Property {
-    String ram;
-    int processorCount;
+public class Processor extends Detail {
+    private final String ramSize;
+    private final int processorCount;
+    private static final String RAM_MEASURE = "GB";
 
-    public Processor(String name, BigDecimal price, String ram, int processorCount) {
+    public Processor(String name, BigDecimal price, String ramSize, int processorCount) {
         this.name = name;
         this.price = price;
-        this.ram = ram;
+        this.ramSize = ramSize;
         this.processorCount = processorCount;
     }
 
     public String getDescription() {
-        return "";
+        return String.format("%s: RAM-%s%s, Processor count-%s ,Price-%.2f%s",
+                name, ramSize, RAM_MEASURE, processorCount, price, CURRENCY);
     }
 }
