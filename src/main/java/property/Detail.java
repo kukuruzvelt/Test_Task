@@ -12,4 +12,8 @@ public abstract class Detail {
     public BigDecimal getPrice(){
         return price;
     }
+
+    public String getName(){
+        return name;
+    }
 }
