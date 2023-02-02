@@ -28,6 +28,7 @@ public abstract class Computer {
         for (Detail detail : detailList){
             stringBuilder.append(detail.getName()).append(" - ").append(detail.getDescription()).append("\n\t");
         }
+        // todo count and sout the price of computer
         return stringBuilder.toString();
     }
 }
