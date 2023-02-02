@@ -5,19 +5,19 @@ import property.Detail;
 import java.math.BigDecimal;
 
 public class Processor extends Detail {
-    private final String ramSize;
+    private final BigDecimal CPUFrequency;
     private final int processorCount;
-    private static final String RAM_MEASURE = "GB";
+    private static final String FREQUENCY_MEASURE = "GHz";
 
-    public Processor(String name, BigDecimal price, String ramSize, int processorCount) {
+    public Processor(String name, BigDecimal price, BigDecimal CPUFrequency, int processorCount) {
         this.name = name;
         this.price = price;
-        this.ramSize = ramSize;
+        this.CPUFrequency = CPUFrequency;
         this.processorCount = processorCount;
     }
 
     public String getDescription() {
-        return String.format("%s: RAM-%s%s, Processor count-%s ,Price-%.2f%s",
-                name, ramSize, RAM_MEASURE, processorCount, price, CURRENCY);
+        return String.format("%s: RAM-%s%s, CPU Frequency-%s ,Price-%.2f%s",
+                name, CPUFrequency, FREQUENCY_MEASURE, processorCount, price, CURRENCY);
     }
 }

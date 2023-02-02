@@ -4,6 +4,7 @@ import property.Detail;
 import property.impl.Processor;
 import property.impl.VideoCard;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,11 +25,14 @@ public abstract class Computer {
 
     public String getInfo(){
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(name).append("\n\t");
+        BigDecimal price = BigDecimal.ZERO;
+        for (Detail detail : detailList){
+            price = price.add(detail.getPrice());
+        }
+        stringBuilder.append(name).append(" - ").append(price).append("\n\t");
         for (Detail detail : detailList){
             stringBuilder.append(detail.getName()).append(" - ").append(detail.getDescription()).append("\n\t");
         }
-        // todo count and sout the price of computer
         return stringBuilder.toString();
     }
 }
