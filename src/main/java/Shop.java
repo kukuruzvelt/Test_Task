@@ -1,7 +1,6 @@
 import model.Computer;
 import model.impl.Laptop;
 import model.impl.PersonalComputer;
-import property.Detail;
 import property.impl.*;
 
 import java.io.BufferedReader;
@@ -12,9 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Shop {
-    private List<Computer> computerList;
+    private final List<Computer> computerList;
 
     public Shop(List<Computer> computerList) {
+        if (computerList.size() < 1) {
+            throw new IllegalArgumentException("Empty data");
+        }
         this.computerList = computerList;
     }
 
@@ -55,15 +57,12 @@ public class Shop {
     }
 
     public void startSelling() {
-        while (true) {
+        do {
             for (int i = 0; i < computerList.size(); i++) {
                 System.out.println(i + 1 + ") " + computerList.get(i).getInfo());
             }
             buy();
-            if (computerList.size() < 1 || !continuation()) {
-                break;
-            }
-        }
+        } while (computerList.size() >= 1 && continuation());
         System.out.println("Thank you for buying our computers!");
     }
 
@@ -84,12 +83,16 @@ public class Shop {
         Battery expensiveBattery = new Battery("75 W*h Battery", BigDecimal.valueOf(200), 75);
         PowerUnit cheapPowerUnit = new PowerUnit("500W Power Unit", BigDecimal.valueOf(80), 500);
         PowerUnit expensivePowerUnit = new PowerUnit("650W Power Unit", BigDecimal.valueOf(120), 650);
+
         List<Computer> computers = new ArrayList<>() {
             {
-                add(new PersonalComputer("Office pc", i5Processor, geForceGTX1060, cheapPowerUnit));
+                add(new PersonalComputer("Office PC", i5Processor, geForceGTX1060, cheapPowerUnit));
                 add(new Laptop("Office laptop", i5Processor, geForceGTX1060, cheapBattery, fullHDScreen60FPS));
+                add(new PersonalComputer("Gaming PC", i7Processor, geForceRTX3060, expensivePowerUnit));
+                add(new Laptop("Gaming laptop", i7Processor, geForceRTX3060, expensiveBattery, fullHDScreen144FPS));
             }
         };
+
         Shop shop = new Shop(computers);
         shop.startSelling();
     }

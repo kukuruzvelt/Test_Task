@@ -15,7 +15,7 @@ public class PowerUnit extends Detail {
     }
 
     public String getDescription() {
-        return String.format("%s: Power-%s%s, Price-%.2f%s",
+        return String.format("%s: Power - %s%s, Price - %.2f%s",
                 name, power, POWER_MEASURE, price, CURRENCY);
     }
 }

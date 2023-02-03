@@ -8,12 +8,8 @@ public abstract class Detail {
     protected final String CURRENCY = "$";
 
     public abstract String getDescription();
-
-    public BigDecimal getPrice(){
-        return price;
-    }
-
-    public String getName(){
+    
+    public String getName() {
         return name;
     }
 }

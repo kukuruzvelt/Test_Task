@@ -17,7 +17,7 @@ public class Processor extends Detail {
     }
 
     public String getDescription() {
-        return String.format("%s: RAM-%s%s, CPU Frequency-%s ,Price-%.2f%s",
+        return String.format("%s: RAM - %s %s, CPU Frequency - %s, Price - %.2f%s",
                 name, CPUFrequency, FREQUENCY_MEASURE, processorCount, price, CURRENCY);
     }
 }

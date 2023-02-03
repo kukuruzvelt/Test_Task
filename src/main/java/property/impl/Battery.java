@@ -15,7 +15,7 @@ public class Battery extends Detail {
     }
 
     public String getDescription() {
-        return String.format("%s: Battery capacity-%s%s, Price-%.2f%s",
+        return String.format("%s: Battery capacity - %s %s, Price - %.2f%s",
                 name, batteryCapacity, CAPACITY_MEASURE, price, CURRENCY);
     }
 }

@@ -10,7 +10,7 @@ public class VideoCard extends Detail {
     private static final String RAM_MEASURE = "GB";
     private static final String MEMORY_SPEED_MEASURE = "MHz";
 
-    public VideoCard(String name, BigDecimal price, int memorySpeed, int graphicsCardRamSize){
+    public VideoCard(String name, BigDecimal price, int memorySpeed, int graphicsCardRamSize) {
         this.name = name;
         this.price = price;
         this.memorySpeed = memorySpeed;
@@ -18,7 +18,7 @@ public class VideoCard extends Detail {
     }
 
     public String getDescription() {
-        return String.format("%s: Graphics Card RAM-%s%s, Memory speed-%s %s ,Price-%.2f%s",
+        return String.format("%s: Graphics Card RAM - %s %s, Memory speed - %s %s, Price - %.2f%s",
                 name, graphicsCardRamSize, RAM_MEASURE, memorySpeed, MEMORY_SPEED_MEASURE,
                 price, CURRENCY);
     }

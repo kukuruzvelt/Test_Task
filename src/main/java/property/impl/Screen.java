@@ -18,7 +18,7 @@ public class Screen extends Detail {
     }
 
     public String getDescription() {
-        return String.format("%s: Diagonal-%s%s, Screen refresh rate-%s%s ,Price-%.2f%s",
+        return String.format("%s: Diagonal - %s %s, Screen refresh rate - %s%s, Price - %.2f%s",
                 name, diagonal, DIAGONAL_MEASURE, screenRefreshRate, REFRESH_RATE_MEASURE,
                 price, CURRENCY);
     }
